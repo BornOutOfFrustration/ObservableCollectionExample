@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -9,7 +10,9 @@ namespace ObservableCollectionExample
 {
     public class ViewModel
     {
+        private ObservableCollection<ItemViewModel> LocalCollection = new ObservableCollection<ItemViewModel>();
 
+        public ObservableCollection<ItemViewModel> TheCollection => this.LocalCollection;
     }
 
     public class ItemViewModel : INotifyPropertyChanged
